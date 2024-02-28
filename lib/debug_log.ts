@@ -61,12 +61,9 @@ class DebugLog {
     const timestamp = new Date().toISOString();
     const logData = this.createLogData(data);
     const logEntry = { timestamp: timestamp, ...logData };
-    console.log(logEntry, this.csvWriter);
     try {
       await this.csvWriter.writeRecords([logEntry]); // Wrap logEntry in an array
-      console.log("CSV file written successfully");
     } catch (err) {
-      console.error("Error writing CSV file:", err);
       throw new Error("Failed to write CSV file");
     }
     // fs.appendFileSync(this.file, logEntry + "\n");

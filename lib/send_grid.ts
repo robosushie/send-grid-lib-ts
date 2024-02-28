@@ -5,12 +5,11 @@ import { EmailType, SendGridOptions } from "./types";
 class SendGridEmail {
   private defaultSender: EmailType;
   private logLocation: string;
-  private logger: DebugLog; // Uncomment if needed
+  private logger: DebugLog;
 
   constructor(apiKey: string | any, options: SendGridOptions) {
     sgMail.setApiKey(apiKey);
     this.defaultSender = options.defaultSender;
-    console.log(this.defaultSender);
     this.logLocation = options.logLocation || "./";
     this.logger = new DebugLog(options.logFilename, this.logLocation);
   }
@@ -49,7 +48,7 @@ class SendGridEmail {
         subject: subject,
         content: content,
       });
-      console.log("Email sent successfully:", msg);
+      // console.log("Email sent successfully to: ", to);
     } catch (error: any) {
       await this.logger.log({
         status: "Failure",
@@ -61,7 +60,6 @@ class SendGridEmail {
         subject: subject,
         content: content,
       });
-      console.log(error);
       console.error(
         "Error sending email:",
         error.code,
@@ -110,7 +108,7 @@ class SendGridEmail {
         subject: subject,
         content: content,
       });
-      console.log("Email sent successfully:", msg);
+      // console.log("Email sent successfully to: ", to);
     } catch (error: any) {
       const dateTimeString = [dateString, timeString].join("T");
       await this.logger.log({
@@ -123,7 +121,6 @@ class SendGridEmail {
         subject: subject,
         content: content,
       });
-      console.log(error);
       console.error(
         "Error sending email:",
         error.code,

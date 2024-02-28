@@ -33,7 +33,7 @@ sendGrid
   .sendEmail(recipients, subject, content, htmlContent)
   .then(() => {
     console.log(
-      "Email sent successfully. Recipients should reveive the email in a few minutes."
+      "Email sent successfully. Recipients should receive the email in a few minutes."
     );
   })
   .catch((error) => {
@@ -48,7 +48,7 @@ sendGrid
   })
   .then(() => {
     console.log(
-      "Email sent successfully. Recipients should reveive the email in a few minutes."
+      "Email sent successfully. Recipients should receive the email in a few minutes."
     );
   })
   .catch((error) => {
