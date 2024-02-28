@@ -77,36 +77,36 @@ sendGrid.scheduleEmail(recipients, subject, date, time, content, htmlContent, op
 - Type: string
 - Description: The HTML-formatted content of the email. This is optional and can be used to send emails with rich formatting.
 
-`options`
+`options` (optional)
 - Type: object
 - Description: Additional options for sending the email.
 
 Properties:
-- `from`: Specifies the sender of the email. It can be either an object with email and name properties or a string representing the email address. If provided, it overrides the default sender set in the SendGridEmail instance.
+- `from` (optional): Specifies the sender of the email. It can be either an object with email and name properties or a string representing the email address. If provided, it overrides the default sender set in the SendGridEmail instance.
   ```
   from = { email: "<from-email>", name: "<from-name>" }
   from = "<from-email>"
   ```
 
-- `reply_to_list`: A list of email addresses to receive replies to the email. It can be an array of objects with email and name properties or an array of strings representing email addresses.
+- `reply_to_list` (optional): A list of email addresses to receive replies to the email. It can be an array of objects with email and name properties or an array of strings representing email addresses.
   ```
   reply_to_list = [{ email: "<email>", name: "<name>" }]
   reply_to_list = ["<email>"]
   ```
 
-- `cc`: A list of email addresses to be included in the CC (carbon copy) of the email. It can be an array of objects with email and name properties or an array of strings representing email addresses.
+- `cc` (optional): A list of email addresses to be included in the CC (carbon copy) of the email. It can be an array of objects with email and name properties or an array of strings representing email addresses.
   ```
   cc = [{ email: "<email>", name: "<name>" }]
   cc = ["<email>"]
   ```
 
-- `bcc`: A list of email addresses to be included in the BCC (blind carbon copy) of the email. It can be an array of objects with email and name properties or an array of strings representing email addresses.
+- `bcc` (optional): A list of email addresses to be included in the BCC (blind carbon copy) of the email. It can be an array of objects with email and name properties or an array of strings representing email addresses.
   ```
   bcc = [{ email: "<email>", name: "<name>" }]
   bcc = ["<email>"]
   ```
 
-- `attachments`: An array of attachments to be included with the email. Each attachment should be an object with the following properties:
+- `attachments` (optional): An array of attachments to be included with the email. Each attachment should be an object with the following properties:
   - `content`: The content of the attachment, encoded as base64.
   - `filename`: The filename of the attachment.
   - `type`: The MIME type of the attachment.
