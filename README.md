@@ -73,6 +73,14 @@ sendGrid.scheduleEmail(recipients, subject, date, time, content, htmlContent, op
 - Type: string
 - Description: The main content of the email.
 
+`date`
+- Type: string
+- Description: Date to schedule the email in "YYYY-MM-DD" format.
+
+`time`
+- Type: string
+- Description: Date to schedule the email in 24 hour "HH:MM-SS" format.
+
 `htmlContent` (optional)
 - Type: string
 - Description: The HTML-formatted content of the email. This is optional and can be used to send emails with rich formatting.
