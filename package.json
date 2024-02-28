@@ -1,0 +1,21 @@
+{
+  "name": "libsendgrid",
+  "version": "1.0.0",
+  "description": "SendGrid library wrapper for POC - AIDY",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.1",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^20.11.21"
+  }
+}
